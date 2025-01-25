@@ -10,10 +10,8 @@ function search(event){
     let searchInputElement = document.querySelector("#search-input");
     let city = searchInputElement.ariaValueMax;
 
-    let apiKey = "44f618d99f8a16c0a9a9065877f062b1"
-    let apiUrl = 'https://.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={44f618d99f8a16c0a9a9065877f062b1}'
-
-    axions.get(apiUrl).then  (displayTemperature);
+    let apiKey = "dc010eb1e73f4228b30225823252501"
+    let apiUrl = 'http://api.weatherapi.com/v1/current.json?key=dc010eb1e73f4228b30228b30225823252501'
 }
 function formtDate(date) {
     let minutes = date.getMinutes();
@@ -44,4 +42,6 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
 let currentDateElement = document.querySelector("#current-date");
-let currentDate =new date();
+let currentDate = new Date();
+
+currentDateElement.innerHTML = formtDate(currentDate);
